@@ -36,3 +36,15 @@ function showMarkerAt(top, left) {
     marker.style.top = top;
     marker.style.left = left;
 }
+function handleQRScan(qrData) {
+    const item = JSON.parse(qrData);
+
+    document.getElementById("itemName").textContent =
+        "Name: " + item.name;
+
+    document.getElementById("itemStock").textContent =
+        "In Store: " + (item.in_store ? "Yes" : "No");
+
+    document.getElementById("itemPrice").textContent =
+        "Price: €" + item.price;
+}
